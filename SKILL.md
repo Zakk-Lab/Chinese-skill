@@ -11,6 +11,10 @@ Read this file at the start of every work item. Read it again after context comp
 
 Read repository instruction files again at the same checkpoints. Repository-specific terminology and formats override this skill; this skill still governs clarity, brevity, comments, and Chinese style.
 
+## Relations
+
+Cross-cutting: every other skill assumes this one for any Chinese text, and none routes to it. It depends on nothing and hands off to nothing. Repository instruction files still win on terminology and format.
+
 ## Write directly
 
 - Lead with the result, fact, failure, or required action.
