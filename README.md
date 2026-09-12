@@ -6,6 +6,19 @@ Chinese Skill 是供 Claude、Codex、OpenCode 與 OMP 使用的中文寫作與�
 
 它檢查語法、邏輯、機器翻譯痕跡、口語、自造詞、冗長內容、簡繁混用及不必要的註釋。規則優先採用專案既有格式與術語；面向多個中文地區時，使用同一字形及各地讀者都能理解的標準中文。
 
+<!-- skill-map -->
+## 總圖
+
+```text
+任務進來
+ ├─ 定結構 ─────▶ zakk-architecture ──介面取值──▶ web-ui
+ ├─ 一次改動 ───▶ zakk-maintain ─┬─ 計劃、落倉、門禁、報告 ─▶ zakk-workflow
+ │                              ├─ 判 diff ──────────────▶ zakk-review ─▶ zakk-workflow
+ │                              └─ 派工 ─────────────────▶ dispatch --engine omp | codex | opencode
+ └─ 任何中文 ───▶ chinese-skill（橫切，每份都讀）
+```
+<!-- /skill-map -->
+
 ## 要求
 
 - Python 3.11 或更新版本
