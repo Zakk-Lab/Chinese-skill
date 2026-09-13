@@ -13,7 +13,7 @@ Read repository instruction files again at the same checkpoints. Repository-spec
 
 ## Relations
 
-Cross-cutting: every other skill assumes this one for any Chinese text, and none routes to it. It depends on nothing and hands off to nothing. Repository instruction files still win on terminology and format.
+Cross-cutting: every other skill assumes this one for any Chinese text, and none routes to it. It depends on nothing and hands off to nothing; English prose has its own cross-cutting sibling, `writing-skill`. Repository instruction files still win on terminology and format.
 
 ## Write directly
 
