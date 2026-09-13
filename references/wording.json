@@ -387,6 +387,65 @@
       ]
     },
     {
+      "id": "business-jargon",
+      "pattern": "(?:推動|推动|促進|促进|加速|實現|实现)[^，。；：\\n]{0,12}(?:方案|功能|策略|需求)[^，。；：\\n]{0,4}落地|(?:對齊|对齐)(?:團隊|团队)?(?:目標|目标|方向|認知)|打通(?:流程|鏈路|链路|資料|數據|数据|壁壘|壁垒)|(?:賦予|赋予)(?:團隊|团队|產品|产品|業務|业务)(?:能力|價值|价值|動能|动能)",
+      "message": "name the subject, action, and observable result instead of business jargon"
+    },
+    {
+      "id": "empty-conclusion",
+      "pattern": "(?:本次|此次)(?:改動|改动|變更|变更|修改)(?:的)?(?:目的)?旨在|(?:意義|意义)(?:十分|非常)?重大",
+      "message": "delete the empty conclusion or state its evidence and result directly"
+    },
+    {
+      "id": "vague-change-shell",
+      "pattern": "(?:本次|此次|相關|相关)?[^，。；：\\n]{0,8}(?:在|針對|针对)[^，。；：\\n]{1,12}方面(?:進行|进行)(?:了)?(?:優化|优化|改進|改进|調整|调整)",
+      "message": "name the changed object, action, and measured or observable result"
+    },
+    {
+      "id": "circled-enumeration",
+      "pattern": "(?m)^[ \\t]*[①-⑳](?=[ \\t、.．]|$)",
+      "message": "use a Markdown or plain numbered list instead of circled-number decoration",
+      "styles": [
+        "strict",
+        "academic",
+        "technical",
+        "readme"
+      ]
+    },
+    {
+      "id": "decorative-dash",
+      "pattern": "(?:安裝|安装|設定|设置|執行|执行|檢查|检查|測試|测试)[^。！？\\n]{0,12}[ \\t]+——[ \\t]+(?:然後|然后|接著|接着|再|最後|最后)",
+      "message": "remove the decorative dash and state the sequence or relation directly",
+      "styles": [
+        "strict",
+        "academic",
+        "technical",
+        "readme"
+      ]
+    },
+    {
+      "id": "repeated-bold-label",
+      "pattern": "(?m)^[ \\t]*\\*\\*[^*\\n]{1,12}[：:]\\*\\*[^\\n]*(?:\\r?\\n[ \\t]*){2,}\\*\\*[^*\\n]{1,12}[：:]\\*\\*",
+      "message": "use plain paragraphs or one useful heading instead of bold labels on every paragraph",
+      "styles": [
+        "strict",
+        "academic",
+        "technical",
+        "readme"
+      ]
+    },
+    {
+      "id": "generic-heading-stack",
+      "pattern": "(?m)^ {0,3}#{1,6}[ \\t]+(?:摘要|概述|總結|总结|變更|变更|改動|改动|測試|测试)[ \\t]*\\r?\\n(?:[ \\t]*\\r?\\n)* {0,3}#{1,6}[ \\t]+(?:摘要|概述|總結|总结|變更|变更|改動|改动|測試|测试)[ \\t]*$",
+      "message": "remove empty generic headings and organize only independent subjects",
+      "styles": [
+        "strict",
+        "academic",
+        "technical",
+        "readme"
+      ]
+    },
+    {
       "id": "ui-positional-action",
       "pattern": "(?:請|请)?(?:點擊|点击)(?:此處|此处|這裡|这里)",
       "message": "name the action or destination instead of a positional click instruction",

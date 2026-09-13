@@ -348,6 +348,50 @@ with tempfile.TemporaryDirectory() as base:
     check("ASCII punctuation", any("Chinese punctuation" in item[1]
                                     for item in strict_lint_file(
                                         ascii_punctuation, "prose", "general", None, 280)))
+    wording_cases = {
+        "business-jargon": (
+            "推動方案落" + "地、對" + "齊團隊目標、打"
+            + "通資料鏈路並賦" + "予產品價值。\n",
+            "飛機已落" + "地；編譯器對" + "齊記憶體，核心賦"
+            + "予行程讀取權限。\n",
+        ),
+        "empty-conclusion": (
+            "本次改動旨" + "在改善流程，意義重" + "大。\n",
+            "此修補在空 token 進入 session 前拒絕請求。\n",
+        ),
+        "vague-change-shell": (
+            "本次在效能方面進" + "行了優化。\n",
+            "本次將快取索引改為雜湊表，避免線性掃描。\n",
+        ),
+        "circled-enumeration": (
+            "① 安裝套件。\n② 執行檢查。\n",
+            "1. 安裝套件。\n2. 執行檢查。\n",
+        ),
+        "decorative-dash": (
+            "安裝 —— 然後執行。\n",
+            "連線失敗——憑證已過期。\n",
+        ),
+        "repeated-bold-label": (
+            "**問題：** 空 token 會建立 session。\n\n**解法：** 先拒絕空 token。\n",
+            "**限制：** 此選項只接受整數。\n\n缺值時命令會失敗。\n",
+        ),
+        "generic-heading-stack": (
+            "## 摘要\n\n## 變更\n",
+            "## 安裝\n\n執行 `install.sh`。\n",
+        ),
+    }
+    for identifier, (bad_text, clean_text) in wording_cases.items():
+        bad_case = root / f"{identifier}-bad.md"
+        bad_case.write_text(bad_text)
+        check(f"{identifier} is reported", any(
+            item.code == f"wording.{identifier}" for item in strict_lint_file(
+                bad_case, "prose", "general", None, 280, "zh-TW")))
+        clean_case = root / f"{identifier}-clean.md"
+        clean_case.write_text(clean_text)
+        check(f"{identifier} similar syntax is allowed", not any(
+            item.code == f"wording.{identifier}" for item in strict_lint_file(
+                clean_case, "prose", "general", None, 280, "zh-TW")))
+
     clean = root / "clean.txt"
     clean.write_text(FIXTURES["clean_prose"] + "\n")
     check("clean technical prose", not strict_lint_file(
