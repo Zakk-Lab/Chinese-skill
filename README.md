@@ -20,7 +20,8 @@ Chinese Skill 是供 Claude、Codex、OpenCode 與 OMP 使用的中文寫作與�
  │          ├─ 2 按批准的計劃寫說明書 ──派工──▶ dispatch --engine omp | codex | opencode
  │          ├─ 3 判 diff ──▶ zakk-review ；審者自己做消融、門禁、對拍 ；再派一個沒看過計劃的冷讀
  │          └─ 4 落倉與報告 ──▶ zakk-workflow（分支、提交、合併請求、完成報告）
- └─ 任何中文 ──▶ chinese-skill（橫切：每份都讀，壓縮、恢復、切換任務後重讀）
+ ├─ 任何中文 ──▶ chinese-skill（橫切：每份都讀，壓縮、恢復、切換任務後重讀）
+ └─ 任何英文正文 ──▶ writing-skill（橫切：README、docs、註釋、提交、PR、issue）
 ```
 <!-- /skill-map -->
 
