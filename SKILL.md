@@ -153,3 +153,5 @@ Before sending or publishing Chinese text, verify:
 10. No disallowed Emoji or decorative symbol remains under the selected style.
 11. Unsupported effects, future behavior, and recovery actions were not made more certain.
 12. The response ends when the requested information is complete.
+13. AI-style filler and business jargon were replaced with a concrete subject, action, and result.
+14. A technical document, PR, or issue opens with behavior, a limitation, or a result rather than a value judgment.

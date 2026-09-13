@@ -52,6 +52,14 @@ Write in this order when the fields exist:
 
 Omit absent fields. Do not add an introduction or final recap.
 
+## Open technical documents with behavior
+
+The first sentence of a technical document, PR, or issue states a behavior, limitation,
+or result. Do not open with a value judgment, praise, or claim of importance.
+
+Example: replace `這項重要改動大幅改善使用體驗。` with
+`匯入失敗時，命令會顯示檔名與行號。`
+
 ## Check grammar and logic
 
 - Give every finite statement a clear subject when context does not supply one.

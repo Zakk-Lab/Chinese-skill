@@ -37,6 +37,20 @@ When revising an existing draft, do not increase its character, block, heading, 
 list-item count unless the revision adds a required fact that was absent. Replacing
 colloquial or imprecise wording is not permission to add an explanation.
 
+## Write Chinese PRs and issues
+
+- Open with the current behavior, limitation, or result: replace `值得注意的是，此功能可以有效提升體驗。` with `啟用後，匯入失敗會顯示檔名與行號。`
+- Give a PR an observable title: replace `更新 parser` with `parser：拒絕建立空 token 的 session`。
+- In the PR body, state why the change is needed, its non-obvious impact, how the risky behavior was verified, and known limitations; omit fields that do not apply.
+- Give an issue title that names the component, trigger, and failure: replace `編譯器有問題` with `cmd/compile：啟用 prove 後錯誤編譯迴圈`。
+- In an issue, provide the environment, minimal reproduction, actual result, and expected result in the order that best supports reproduction.
+- Separate observed facts from a suspected cause: write `實際：程式收到 SIGSEGV。推測：prove 可能重用過期值。` rather than presenting the cause as established.
+- Delete boilerplate headings such as `## 摘要`、`## 變更`、`## 測試` when each section only repeats the title.
+- Replace bullet piles such as `- 改善效能 - 優化錯誤 - 提升體驗` with a measurement, exact error, or user-visible behavior; omit unsupported claims.
+- Replace paragraph labels such as `**問題：** … **解法：** …` with plain paragraphs; retain labels only when readers need to scan independent fields.
+- Delete `綜上所述，本次改動意義重大。` and `歡迎審閱`; neither adds evidence or a decision.
+- Do not direct maintainers with `請盡快合併`; ask a concrete question such as `重用 session 是否應跳過此 callback？`
+
 ## Write releases as publishable documents
 
 Confirm the version, tag, audience, user-visible changes, compatibility boundary,
