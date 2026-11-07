@@ -1,6 +1,6 @@
 ---
 name: chinese-skill
-description: Enforce concise, professional Chinese across articles, pasted text, chat, README files, documentation, UI copy, alerts, logs, tests, source code, comments, reviews, commits, pull requests, release notes, and release announcements. Use when Claude, Codex, OpenCode, or OMP writes, rewrites, polishes, improves, translates, reviews, or audits Chinese; when producing technical or professional articles; when text may contain grammatical errors, literal or machine-like translation, formulaic AI wording, emoji, weak computing, programming, Linux, or Gentoo terminology, colloquial wording, invented terms, mixed languages or locales, missing causality, complex sentences, obvious comments, repetition, or excessive detail; and whenever preparing Chinese PR or review text for gentoo-zh repositories.
+description: Enforce concise, professional Chinese in articles, chat, README files, docs, UI copy, logs, code comments, commits, pull requests, reviews and release notes. Use when Claude, Codex, OpenCode or OMP writes, rewrites, polishes, translates, reviews or audits Chinese, especially literal translation, formulaic AI wording, weak Linux or Gentoo terms, mixed locales, or Chinese PR text for gentoo-zh.
 ---
 
 # Chinese Writing Control
@@ -24,6 +24,7 @@ Cross-cutting: every other skill assumes this one for any Chinese text, and none
 - Do not invent terms, metaphors, or vague labels. Use the ecosystem's established term.
 - Keep one idea per sentence and one reason per paragraph.
 - Match the requested locale. Do not mix Simplified and Traditional Chinese in one artifact.
+- When the reader writes Traditional script, do not quote Simplified-script files to them verbatim; restate the content in their script and vocabulary and mark it as a paraphrase, because otherwise they get mixed scripts and mainland vocabulary they did not write.
 - Use standard Chinese that readers in China, Taiwan, Hong Kong, Singapore, and
   Malaysia can understand without local slang. A locale's established technical term,
   such as `程式碼`, remains valid when the artifact uses that locale.
